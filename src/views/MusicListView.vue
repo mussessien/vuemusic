@@ -3,7 +3,7 @@
     <listView-top :state="state.musicList.playlist.coverImgUrl"></listView-top>
     <listView-syncpsis :musicList="state.musicList"></listView-syncpsis>
     <list-view-bottom></list-view-bottom>
-    <music-list-view></music-list-view>
+    <music-list-view :tracks="state.musicList.playlist.tracks" :subscribedCount="state.musicList.playlist.subscribedCount"></music-list-view>
   </div>
 </template>
 
@@ -30,7 +30,8 @@ export default {
         musicList: {
           playlist: {
             coverImgUrl: '',
-            creator: {}
+            creator: {},
+            tracks:[]
           }
         }
       }
