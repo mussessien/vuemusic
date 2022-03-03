@@ -15,3 +15,8 @@ export function getHomepageBall() {
 export function getPersonalized(limit = 10) {
     return axios.get(`${baseUrl}/personalized?limit=${limit}`)
 }
+
+// 获取歌单信息，id为指定歌单ID
+export function getPlaylist(id){
+    return axios.get(`http://localhost:3000/playlist/detail?id=${id}`)
+}

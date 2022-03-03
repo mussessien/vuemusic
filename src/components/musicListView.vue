@@ -12,7 +12,7 @@
         <div class="right">首开VIP仅限5元></div>
       </div>
       <div class="MusicOperation">
-        <div class="left">
+        <div class="left" @click="PlayAll">
           <svg class="icon" aria-hidden="true">
             <use xlink:href="#icon-yunhang" />
           </svg>
@@ -43,17 +43,19 @@
 
 <script>
 import { reactive } from '@vue/reactivity'
+// import { mapState } from 'vuex'
 export default {
   props: ['tracks', 'subscribedCount'],
+  // computed: {
+  //   ...mapState(['playlist', 'playlistIndex'])
+  // },
   setup (props) {
     let state = reactive({
       fee: [],
       VipCount: 0
     })
-    // console.log(list)
-    // console.log(props.tracks,'11111')
-    
-      for (let i = 0; i <= props.tracks.length - 1; i++) {
+
+    for (let i = 0; i <= props.tracks.length - 1; i++) {
       state.fee.push(props.tracks[i].fee)
     }
     for (let i = 0; i <= state.fee; i++) {
@@ -64,6 +66,11 @@ export default {
     return {
       state
     }
+  },
+  methods: {
+    PlayAll () {
+      this.$store.commit('setPlaylist',this.tracks)
+    }
   }
 }
 </script>
@@ -73,6 +80,7 @@ export default {
   width: 7.5rem;
   display: flex;
   flex-direction: column;
+  padding-bottom: 1rem;
   .operation {
     .Ifvip {
       width: 7.5rem;
