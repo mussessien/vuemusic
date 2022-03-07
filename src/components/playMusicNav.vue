@@ -16,7 +16,7 @@
           <use xlink:href="#icon-zanting" />
         </svg>
       </div>
-      <div class="more">
+      <div class="more" @click="drawer = true">
         <svg class="icon" aria-hidden="true">
           <use xlink:href="#icon-liebiao2" />
         </svg>
@@ -24,6 +24,17 @@
     </div>
     <audio ref="audio" :src="`https://music.163.com/song/media/outer/url?id=${playlist[playlistIndex].id}.mp3`"></audio>
   </div>
+
+  <el-drawer
+  title="我是标题"
+  v-model="drawer"
+  :with-header="false"
+  direction='btt'
+  size='50%'
+  :append-to-body="true"
+  custom-class="Drawer">
+  <span>我来啦!</span>
+</el-drawer>
 </template>
 
 <script>
@@ -31,6 +42,7 @@ import { mapState } from 'vuex'
 export default {
   data() {
     return {
+      drawer:false,
       paused:false
     }
   },
@@ -60,7 +72,7 @@ export default {
   background-color: #fff;
   position: fixed;
   bottom: 0;
-  z-index: 999;
+  z-index: 10000;
   .img {
     display: flex;
     // justify-items: center;
@@ -118,5 +130,8 @@ export default {
       }
     }
   }
+}
+.Drawer{
+  margin-bottom: 1.2rem;
 }
 </style>
