@@ -16,16 +16,15 @@
           <use xlink:href="#icon-zanting" />
         </svg>
       </div>
-      <div class="more" @click="drawer = true">
+      <div class="more" @click="drawer = !drawer">
         <svg class="icon" aria-hidden="true">
           <use xlink:href="#icon-liebiao2" />
         </svg>
       </div>
     </div>
     <audio ref="audio" :src="`https://music.163.com/song/media/outer/url?id=${playlist[playlistIndex].id}.mp3`"></audio>
-  </div>
 
-  <el-drawer
+    <el-drawer
   title="我是标题"
   v-model="drawer"
   :with-header="false"
@@ -35,6 +34,7 @@
   custom-class="Drawer">
   <span>我来啦!</span>
 </el-drawer>
+  </div>
 </template>
 
 <script>
