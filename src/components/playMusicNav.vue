@@ -22,6 +22,7 @@
         </svg>
       </div>
     </div>
+<<<<<<< HEAD
     <audio
       ref="audio"
       :src="`https://music.163.com/song/media/outer/url?id=${playlist[playlistIndex].id}.mp3`"
@@ -41,6 +42,21 @@
     <el-table-column prop="ar[0].name"  />
   </el-table>
   </el-drawer>
+=======
+    <audio ref="audio" :src="`https://music.163.com/song/media/outer/url?id=${playlist[playlistIndex].id}.mp3`"></audio>
+
+    <el-drawer
+  title="我是标题"
+  v-model="drawer"
+  :with-header="false"
+  direction='btt'
+  size='50%'
+  :append-to-body="true"
+  custom-class="Drawer">
+  <span>我来啦!</span>
+</el-drawer>
+  </div>
+>>>>>>> refs/remotes/origin/master
 </template>
 
 <script>
