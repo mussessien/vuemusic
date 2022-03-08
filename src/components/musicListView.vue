@@ -43,12 +43,10 @@
 
 <script>
 import { reactive } from '@vue/reactivity'
-// import { mapState } from 'vuex'
+
 export default {
   props: ['tracks', 'subscribedCount'],
-  // computed: {
-  //   ...mapState(['playlist', 'playlistIndex'])
-  // },
+
   setup (props) {
     let state = reactive({
       fee: [],
@@ -118,8 +116,6 @@ export default {
       align-items: center;
       height: 1.2rem;
       padding: 0.2rem 0.2rem;
-      // margin-top: 0.3rem;
-      // border: 1px solid #aaa;
       background-color: #fff;
       border-radius: 0.4rem 0.4rem 0 0;
       .left {
